@@ -1,0 +1,86 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <!-- Template Main CSS File -->
+  <link href="{% static 'assets/css/style.css' %}" rel="stylesheet">
+   <title> Tờ khai thông tin </title> 
+  <body>
+   <h1>
+     TỜ KHAI
+    </h1>
+    <h2>(Dùng cho công dân Việt Nam đề nghị cấp hộ chiếu phổ thông trong nước)</h2>
+    <form method="post", action="/get-infor/">
+      {% csrf_token %}
+      <div class="flex">
+      <!-- <img src="https://vnn-imgs-a1.vgcloud.vn/icdn.dantri.com.vn/2021/05/26/ngo-ngang-voi-ve-dep-cua-hot-girl-anh-the-chua-tron-18-docx-1622043349706.jpeg" align="middle"> -->
+      
+      <label for="infor">1. Họ và tên: </label>
+      <input id="infor" type="text" name=”fname“ value="{{ name }}">
+      <label>2.Giới tính: </label>
+      <input id="gioitinh" type="radio" name="fgender">Nam <input type="radio" name="fgender">Nữ
+      </div>
+      <div class="flex">
+      <label>3. Sinh ngày: </label>
+      <input id="sinh" type="date" name="day">
+      <label>Nơi sinh: </label>
+      <input id="noisinh" type="text" name="name-field">
+      
+      </div>
+      <div class="flex">
+        <label>4.Số CCCD: </label>
+        <input id="CCCD" type="text" name="name-field">
+        <label>Ngày cấp: </label>
+        <input id="ngaycap" type="date" name="day">
+      </div>
+      <div class="flex">
+        <label>5. Dân tộc: </label>
+        <input id="dantoc"type="text" name="name-field">
+      </div>
+      <div class="flex">
+        <label>6. Tôn giáo: </label>
+        <select id="tongiao">
+            <option value="volvo">Không tôn giáo</option>
+            <option value="saab">Đạo Phật</option>
+            <option value="fiat">Đạo Thiên Chúa </option>
+            <option value="audi">Đạo Tin Lành</option>
+            <option value="d1">Đạo khác</option>
+        </select>
+      </div>
+      <div class="flex">
+        <label>7. Số điện thoại: </label>
+        <input id="sdt" type="text" name="name-field">
+      </div>
+      <div class="flex">
+        <label>8. Địa chỉ đăng ký thường trú: </label>
+        <input id="thuongtru" type="text" name="name-field">
+        <label>Quận/huyện: </label>
+        <input id="q1" type="text" name="name-field">
+        <input id="h1" type="text" name="name-field">
+      </div>
+      <div class="flex">
+      <label>9. Địa chỉ đăng ký tạm trú: </label>
+      <input id="tamtru" type="text" name="name-field">
+      <label>Quận/huyện: </label>
+      <input id="q2" type="text" name="name-field">
+      <input id="h2" type="text" name="name-field">
+      </div>
+      <div class="flex">
+        <label>10. Nghề nghiệp: </label>
+        <input id="nghenghiep" type="text" name="name-field">
+      </div>
+      <div class="flex">
+        <label>11. Tên và địa chỉ cơ quan: </label>
+        <input id="ten" type="text" name="name-field">
+      </div>
+      <div class="flex">
+        <input type="submit" name="name-field" value="OK">
+      </div>
+
+    </form>
+    
+    
+
+
+  </body>
+</html>
