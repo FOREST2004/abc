@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <link rel="stylesheet" href="tờ khai.css">
+   <title> Tờ khai thông tin </title> 
+  <body>
+   <h1>
+     TỜ KHAI
+    </h1>
+    <h2>(Dùng cho công dân Việt Nam đề nghị cấp hộ chiếu phổ thông trong nước)</h2>
+    <form method="post">
+      {% csrf_token %}
+      <div class="flex">
+      <!-- <img src="https://vnn-imgs-a1.vgcloud.vn/icdn.dantri.com.vn/2021/05/26/ngo-ngang-voi-ve-dep-cua-hot-girl-anh-the-chua-tron-18-docx-1622043349706.jpeg" align="middle"> -->
+      
+      <label>1. Họ và tên: </label>
+      <input id="hoten" type="text" name=”name-input“>
+      <label>2.Giới tính: </label>
+      <input id="gioitinh" type="radio" name="gender">Nam <input type="radio" name="gender">Nữ
+      </div>
+      <div class="flex">
+      <label>3. Sinh ngày: </label>
+      <input id="sinh" type="date" name="day">
+      <label>Nơi sinh: </label>
+      <input id="noisinh" type="text" name="name-field">
+      
+      </div>
+      <div class="flex">
+        <label>4.Số CCCD: </label>
+        <input id="CCCD" type="text" name="name-field">
+        <label>Ngày cấp: </label>
+        <input id="ngaycap" type="date" name="day">
+      </div>
+      
+        <label>5. Số điện thoại: </label>
+        <input id="sdt" type="text" name="name-field">
+      </div>
+      
+      <div class="flex">
+      <label>6. Địa chỉ đăng ký tạm trú: </label>
+      <input id="tamtru" type="text" name="name-field">
+      <label>Quận/huyện: </label>
+      <input id="q2" type="text" name="name-field">
+      <input id="h2" type="text" name="name-field">
+      </div>
+      <div class="flex">
+        <input id="nop" type="submit">
+
+        
+
+    </form>
+    
+    
+
+
+  </body>
+</html>
