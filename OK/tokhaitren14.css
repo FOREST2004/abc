@@ -1,0 +1,233 @@
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    position: relative;
+    width: 100%;
+    min-height: 150vh;
+}
+
+nav {
+    position: relative;
+    width: 250px;
+    height: 100%;
+    background: #f1f1f1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-right: 1px solid rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    transition: ease-in-out 0.5s;
+}
+
+nav.hide {
+    width: 0;
+}
+
+
+nav ul {
+    width: 100%;
+   margin: 18rem 0rem;
+    list-style: none;
+    overflow: hidden;
+
+}
+
+
+nav ul li a {
+    width: 100%;
+    color:cornflowerblue;
+    font-size: 1.2em;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    padding: 15px;
+    transition: linear 0.5s;
+}
+
+nav ul li a ion-icon {
+    margin: 0 20px;
+    color: cornflowerblue;
+    font-size: 1.2em;
+    transition: linear 0.2s;
+}
+
+
+nav ul li a:hover {
+    background: cornflowerblue;
+    color: white;
+}
+
+nav ul li a:hover ion-icon {
+    color: white;
+}
+
+.content{
+    position: absolute;
+    top: 0;
+    left: 250px;
+    width: calc(100% - 250px);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    transition: ease-in-out 0.5s;
+}
+.content2{
+    position: absolute;
+    top: 0;
+    left: 250px;
+    width: calc(100% - 250px);
+    min-height: 100vh;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    transition: ease-in-out 0.5s;
+}
+.content2 header {
+    font-size: 1.5rem;
+    color: #333;
+    font-weight: 500;
+    text-align: center;
+  }
+
+  .content2 .form {
+    margin-top: 30px;
+  }
+  .form .input-box {
+    width: 100%;
+    margin-top: 20px;
+  }
+  .input-box label {
+    color: #333;
+  }
+  .form :where(.input-box input, .select-box) {
+    position: relative;
+    height: 50px;
+    width: 100%;
+    outline: none;
+    font-size: 1rem;
+    color: #707070;
+    margin-top: 8px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    padding: 0 15px;
+  }
+  .input-box input:focus {
+    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
+  }
+  .form .column {
+    display: flex;
+    column-gap: 15px;
+  }
+  .form .gender-box {
+    margin-top: 20px;
+  }
+  .gender-box h3 {
+    color: #333;
+    font-size: 1rem;
+    font-weight: 400;
+    margin-bottom: 8px;
+  }
+  .form :where(.gender-option, .gender) {
+    display: flex;
+    align-items: center;
+    column-gap: 50px;
+    flex-wrap: wrap;
+  }
+  .form .gender {
+    column-gap: 5px;
+  }
+  .gender input {
+    accent-color: rgb(130, 106, 251);
+  }
+  .form :where(.gender input, .gender label) {
+    cursor: pointer;
+  }
+  .gender label {
+    color: #707070;
+  }
+  .address :where(input, .select-box) {
+    margin-top: 15px;
+  }
+  .select-box select {
+    height: 100%;
+    width: 100%;
+    outline: none;
+    border: none;
+    color: #707070;
+    font-size: 1rem;
+  }
+.content.expand {
+   width: 100%;
+   left: 0;
+}
+
+.content h2 {
+    font-size: 4.5em;
+    color: cornflowerblue;
+    text-transform: uppercase;
+    
+
+}
+nav .toggle_menu {
+    position: absolute;
+    top: 20px;
+    right: -46px;
+    width: 45px;
+    height: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #f1f1f1;
+    border-radius: 0 10px 10px 0;
+    cursor: pointer;
+    transition: linear 0.2s;
+}
+
+nav .toggle_menu ion-icon {
+    color: cornflowerblue;
+    font-size: 1.5em;
+    transition: linear 0.2s;
+}
+nav.toggle_menu:hover {
+    background: cornflowerblue;
+}
+nav.toggle_menu:hover ion-icon {
+    color: white;
+}
+
+
+nav .home {
+    position: absolute;
+    top: 20px;
+    right: -46px;
+    width: 45px;
+    height: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #f1f1f1;
+    border-radius: 0 10px 10px 0;
+    cursor: pointer;
+    transition: linear 0.2s;
+}
+
+nav .home ion-icon {
+    color: cornflowerblue;
+    font-size: 1.5em;
+    transition: linear 0.2s;
+}
+nav.home:hover {
+    background: cornflowerblue;
+}
+nav.home:hover ion-icon {
+    color: white;
+}
