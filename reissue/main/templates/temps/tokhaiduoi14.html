@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE-edge">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <link href="{% static 'assets/css/t.css' %}" rel="stylesheet">
+    <link href="{% static 'assets/css/tokhai.css' %}" rel="stylesheet">
     <title>Web hỗ trợ cấp lại hô chiếu cho người Việt Nam</title>
 </head>
 
@@ -32,25 +32,27 @@
 
         </ul>
     </nav>
-    <section class="content2">
+  
 
 
-        <body>
-        </body>
         <br>
         <br>
         <br>
+    <section class="container">
         <b> Nhập thông tin </h2>
             </br><br><br>
             <form method="POST" action="">
                 {% csrf_token %}
                 {{cccd}}
+                <div class="input-box">
                 <label for="name">Họ và tên: </label>
                 <input type="text" name="name" value="{{name}}"><br><br>
-
+                </div>
+                <div class="input-box">
                 <label for="birth">Ngày tháng năm sinh: </label>
                 <input type="date" name="birth" value="{{birth}}"><br><br>
-
+                </div>
+                <div class="gender-box">
                 <label for="gender"> Giới tính: </label>
                 {% if gender == "male" %}
                 <input type="radio" name="gender" value="male" checked>Nam
@@ -62,19 +64,21 @@
                 <input type="radio" name="gender" value="male">Nam
                 <input type="radio" name="gender" value="female">Nữ <br><br>
                 {% endif %}
-
+                </div>  
+                <div class="input-box">
                 <label for="sdt">SĐT: </label>
                 <input type="number" name="sdt" value="{{phonenumber}}"><br><br>
-
+                </div>
+                <div class="input-box">
                 <label for="location">Địa chỉ liên lạc: </label>
                 <input type="text" name="location" value="location"><br><br>
-
+                
                 <label for="guardian">Người bảo hộ: </label>
                 <input type="text" name="guardian" value="{{guardian}}"><br><br>
 
                 <label for="cccd">Căn cước công dân: </label>
                 <input type="text" name="cccd" value="{{cccd}}"><br><br>
-
+                    </div>
                 <input style="font-size:large" type="submit" name='save' value="save">
                 <!--{{text}}-->
             </form>

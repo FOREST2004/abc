@@ -44,21 +44,36 @@ def laythongtin(response):
     if response.method == "POST":
         if response.POST.get("save"):
             cccd = response.POST.get('cccd')
-            a=CCCD.objects.filter(cccd=cccd).first()
-            b=a.getinfor_set.all().first()
+            if CCCD.objects.filter(cccd=cccd).exists():
+                a=CCCD.objects.filter(cccd=cccd).first()
+                b=a.getinfor_set.all().first()
 
-            content = {
-                'cccd': b.cccd,
-                'name': b.name,
-                'gender': b.gender,
-                'phonenumber': b.phonenumber,
-                'location': b.location,
-                'guardian': b.guardian,
-                'birth': b.birth,
-            }
-            return render(response, 'temps/laythongtin2.html', content)
-        
+                content = {
+                    'cccd': b.cccd,
+                    'name': b.name,
+                    'gender': b.gender,
+                    'phonenumber': b.phonenumber,
+                    'location': b.location,
+                    'guardian': b.guardian,
+                    'birth': b.birth,
+                }
+                return render(response, 'temps/laythongtin2.html', content)
+            
+            else:
+                return render(response, 'temps/laythongtin.html', {'text':'sai'})
+
         else:
-            return render(response, 'temps/laythongtin.html', {'text':'false'})
-    
+                return render(response, 'temps/laythongtin.html', {'text':'false'})
+        
     return render(response, 'temps/laythongtin.html', {})
+
+def tracuu(response):
+    return render(response, 'temps/tracuu.html', {})
+
+def thoigiannhanhochieu(response):
+    content={
+        'queuenumber':'091201',
+        'text':'April 12, 2022', 
+        'time':'12:02'
+    }
+    return render(response, 'temps/thoigiannhanhochieu.html', content)
