@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE-edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link rel="stylesheet" href="t.css">
+    <title>Web hỗ trợ cấp lại hô chiếu cho người Việt Nam</title>
+</head>
+
+<body>
+    <nav>
+        <div><a class="home" href="t.html">
+                <ion-icon name="home-outline"></ion-icon>
+            </a></div>
+        <ul>
+
+
+            <li><a href="#\">
+                    <ion-icon name="settings-outline"></ion-icon>
+                    Kiểm tra thông tin
+                </a></li>
+
+        </ul>
+    </nav>
+    <section class="container">
+        <header>Tờ khai thông tin</header>
+        <form method="POST" action="" class="form">
+            <div class="input-box">
+                <label for="name">Họ tên</label>
+                <input type="text" name="name" value="{{name}}" placeholder="Nhập đầy đủ họ tên" required />
+            </div>
+
+            <div class="input-box">
+                <label for="birthday">Sinh ngày</label>
+                <input type="date" name="birthday" value="{{birthday}}" placeholder="Enter birth date" required />
+            </div>
+
+            <div class="column">
+                <div class="input-box">
+                    <label for="CCCD">Số CCCD</label>
+                    <input type="text" name="cccd" value="{{cccd}}" placeholder="Enter phone number" required />
+                </div>
+            </div>
+
+            <div class="column">
+                <div class="input-box">
+                    <label for="sdt">Số điện thoại</label>
+                    <input type="text" name="sdt" value="{{sdt}}" placeholder="Enter phone number" required />
+                </div>
+            </div>
+
+
+            <div class="gender-box">
+                <h3>Gender</h3>
+                <div class="gender-option">
+                    <div class="gender">
+                        <input type="radio" id="check-male" name="gender" value="{{gender}}" checked />
+                        <label for="gender">Nam</label>
+                    </div>
+                    <div class="gender">
+                        <input type="radio" id="check-female" name="gender" value="{{gender}}" />
+                        <label for="gender">Nữ</label>
+                    </div>
+                </div>
+            </div>
+            <div class="input-box address">
+                <label for="location">Địa chỉ</label>
+                <input type="text" name="location" value="{{location}}" placeholder="Nhập số nhà, tên đường, tổ"
+                    required />
+
+            </div>
+            <div class="input-box address">
+                <label for="guardian">Tên người dám hộ: </label>
+                <input type="text" name="guardianname" placeholder="Nhập tên người dám hộ" value="{{guardian}}"
+                    required />
+                <label for="guardianCCCD">CCCD người dám hộ: </label>
+                <input type="text" name="cccd" value="{{cccd}}" placeholder="Nhập CCCD người dám hộ" required />
+
+            </div>
+
+            <div>
+                <button>Submit</button>
+            </div>
+
+        </form>
+    </section>
+
+</body>
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script>
+    const nav = document.querySelector('nav');
+    const toggle_menu = document.querySelector('.toggle_menu');
+    const content = document.querySelector('content');
+
+    toggle_menu.onclick = function () {
+        nav.classList.toggle('hide');
+        content.classList.toggle('expand');
+    }
+
+</script>
+
+</html>
