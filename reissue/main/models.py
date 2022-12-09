@@ -1,31 +1,21 @@
 from django.db import models
 
 # Create your models here.
-class GetInforUpper14(models.Model):
-    name = models.CharField(max_length=200)
-    birth = models.DateTimeField()
-    gentle = models.BooleanField(default=False)
-    phonenumber = models.CharField(max_length=12)
-    currentplace = models.CharField(max_length=300)
-    declaration = models.ImageField(upload_to = "images/")
-    oldpassport = models.ImageField(upload_to = "images/")
-    cccd_image = models.ImageField(upload_to = "images/")
-    
+class CCCD(models.Model):
+    cccd=models.CharField(max_length=12)
+
     def __str__(self):
-	    return self.name
+	    return self.cccd
 
-
-class GetInforLowwer14(models.Model):
+class GetInfor(models.Model):
+    cccd = models.ForeignKey(CCCD, on_delete=models.CASCADE) # <--- added
     name = models.CharField(max_length=200)
-    birth = models.DateTimeField()
-    gentle = models.BooleanField(default=False)
+    birth = models.DateField()
+    gender = models.CharField(max_length=200)
     phonenumber = models.CharField(max_length=12)
-    currentplace = models.CharField(max_length=300)
-    decaration = models.ImageField(upload_to = "images/")
-    formed_decaration = models.ImageField(upload_to = "images/")
-    birth_certificate = models.ImageField(upload_to = "images/")
-    representator = models.ImageField(upload_to = "images/")
-    cccd_image = models.ImageField(upload_to = "images/")
+    location = models.CharField(max_length=300)
+    guardian = models.CharField(max_length=200)
+    queuenumber = models.IntegerField()
 
     def __str__(self):
 	    return self.name
