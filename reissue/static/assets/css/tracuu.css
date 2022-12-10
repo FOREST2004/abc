@@ -1,5 +1,4 @@
 
-
 * {
     margin: 0;
     padding: 0;
@@ -68,7 +67,6 @@ nav ul li a:hover ion-icon {
     color: white;
 }
 
-
 nav .toggle_menu {
     position: absolute;
     top: 20px;
@@ -94,31 +92,4 @@ nav.toggle_menu:hover {
 }
 nav.toggle_menu:hover ion-icon {
     color: white;
-}
-
-
-
-button {
-    height: 40px;
-    width: 70%;
-    color: #fff;
-    font-size: 2em;
-    font-weight: 400;
-    margin-top: 30px;
-    margin-left: 85px;
-    border: none;
-    cursor: pointer;
-    transition: all 0.2s ease;
-    background: cornflowerblue;
-    
-  
-  }
-
-  input[type=number]{
-    border-color: cornflowerblue;
-    width: 60%;
-    padding: 10px 10px;
-    margin: 5px;
-    box-sizing: border-box;
-    border-radius: 10px;
 }

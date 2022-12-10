@@ -1,97 +1,102 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Tờ khai thông tin cho người trên 14 tuổi</title>
+    <link href="{% static 'assets/css/tokhaiduoi14.css' %}" rel="stylesheet">
+  </head>
+  <body>
+    
+    <div class="button_home">
+        <a href="/" class="button" style="text-decoration: none">
+                Trang chủ
+        </a>     
+    </div>
+    <style>
+      .a.button {
+        color:#fff;
+      }
+    </style>
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE-edge">
-    <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <link href="{% static 'assets/css/tokhai.css' %}" rel="stylesheet">
-    <title>Web hỗ trợ cấp lại hô chiếu cho người Việt Nam</title>
-</head>
-
-<body>
-    <nav>
-        <div class="toggle_menu">
-            <ion-icon name="menu-outline"></ion-icon>
+    <section class="container">
+      <header>Tờ khai thông tin</header>
+      <form method="POST" action="" class="form">
+        {% csrf_token %}
+        <div class="input-box">
+          <label for="name">Họ tên</label>
+          <input type="text" name="name" value="{{name}}" placeholder="Nhập đầy đủ họ tên" required />
         </div>
-        <ul>
-            <li><a href="/">
-                <ion-icon name="home"></ion-icon>
-                Home
-            </a></li>
-            <li><a href="#">
-                    <ion-icon name="reader-outline"></ion-icon>
-                    Tờ khai thông tin trên 14 tuổi
 
-                </a></li>
-            <li><a href="/tokhaiduoi14">
-                    <ion-icon name="reader-outline"></ion-icon>
-                    Tờ khai thông tin dưới 14 tuổi
-                </a></li>
+        <div class="input-box">
+            <label for="birthday">Sinh ngày</label>
+            <input type="date" name="birthday" value="{{birth}}" placeholder="Enter birth date" required />
+        </div>
 
-        </ul>
-    </nav>
-    <section class="content2">
+        <div class="column">
+          <div class="input-box">
+            <label for="sdt">Số điện thoại</label>
+            <input type="text" name="sdt" value="{{phonenumber}}" placeholder="Nhập số điện thoại" required />
+          </div>
+        </div>
+        
+        <div class="gender-box">
+          <h3>Gender</h3>
+            {% if gender == "male" %}
+            <div class="gender-option">
+            <div class="gender">
+              <input type="radio" name="gender" checked />
+              <label for="gender">Nam</label> 
+            </div>
+            <div class="gender">
+              <input type="radio" name="gender" />
+              <label for="gender">Nữ</label>
+            </div>
+            </div>
+            {% elif gender == "female" %}
+            <div class="gender-option">
+            <div class="gender">
+                <input type="radio" name="gender" />
+                <label for="gender">Nam</label> 
+            </div>
+            <div class="gender">
+                <input type="radio" name="gender" checked/>
+                <label for="gender">Nữ</label>
+            </div>
+            </div>
+            {% else %}
+            <div class="gender-option">
+            <div class="gender">
+                <input type="radio" name="gender" />
+                <label for="gender">Nam</label> 
+            </div>
+            <div class="gender">
+                <input type="radio" name="gender" />
+                <label for="gender">Nữ</label>
+            </div>
+            </div>
+            {% endif %}
+        </div>
+        <div class="input-box address">
+          <label for="location">Địa chỉ</label>
+          <input type="text" name="location" value="{{location}}" placeholder="Nhập số nhà, tên đường, tổ" required /> 
+        </div>
 
+        <div class="column">
+            <div class="input-box">
+              <label for="CCCD">Số CCCD</label>
+              <input type="text" name="CCCD" value="{{cccd}}" placeholder="Nhập số căn cước công dân" required />
+            </div>
+          </div>
 
-        <body>
-        </body>
-        <br>
-        <br>
-        <br>
-        <b> Nhập thông tin </h2>
-            </br><br>
-            <form method="POST" action="">
-                {% csrf_token %}
-                <label for="name">Họ và tên: </label>
-                <input type="text" name="name" value="{{name}}"><br><br>
-
-                <label for="birth">Ngày tháng năm sinh: </label>
-                <input type="date" name="birth" value="{{birth}}"><br><br>
-
-                <label for="gender"> Giới tính: </label>
-                {% if gender == "male" %}
-                <input type="radio" name="gender" value="male" checked>Nam
-                <input type="radio" name="gender" value="female">Nữ <br><br>
-                {% elif gender == "female" %}
-                <input type="radio" name="gender" value="male">Nam
-                <input type="radio" name="gender" value="female" checked>Nữ <br><br>
-                {% else %}
-                <input type="radio" name="gender" value="male">Nam
-                <input type="radio" name="gender" value="female">Nữ <br><br>
-                {% endif %}
-
-                <label for="sdt">SĐT: </label>
-                <input type="number" name="sdt" value="{{phonenumber}}"><br><br>
-
-                <label for="location">Địa chỉ liên lạc: </label>
-                <input type="text" name="location" value="location"><br><br>
-
-                <label for="cccd">Căn cước công dân: </label>
-                <input type="text" name="cccd" value="{{cccd}}"><br><br>
-
-                <input style="font-size:large" type="submit" value="save">
-
-
-            </form>
-
-
-</body>
-</section>
-
-</body>
-<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-<script>
-    const nav = document.querySelector('nav');
-    const toggle_menu = document.querySelector('.toggle_menu');
-    const content = document.querySelector('content');
-
-    toggle_menu.onclick = function () {
-        nav.classList.toggle('hide');
-        content.classList.toggle('expand');
-    }
-
-</script>
-
+        <div>
+        <button name="save" value="save">Submit</button>
+        </div>
+    
+      </form>
+    </section>
+  </body>
 </html>
+

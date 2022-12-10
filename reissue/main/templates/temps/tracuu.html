@@ -1,16 +1,19 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE-edge">
-    <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <link rel="stylesheet" href="{% static 'assets/css/tracuu.css' %}">
-    <title>Web hỗ trợ cấp lại hô chiếu cho người Việt Nam</title>
-</head>
-
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Tra cứu thông tin</title>
+    <link href="{% static 'assets/css/tracuu2.css' %}" rel="stylesheet">
+  </head>
+  <body>
+    <style>
+        .a.button {
+          color:#fff;
+        }
+    </style>
     <nav>
         <ul>
             <li><a href="/">
@@ -35,20 +38,23 @@
             </a></li>
         </ul>
     </nav>
-    <section class="tracuu">
-        <b> Vui lòng quý khách nhập CCCD/CMND để để xem lịch đi nhập hộ chiếu!</b>
-        <br> <br>
-
-        <div>
-            <label> Nhập CCCD/CMND: </label>
-            <input type="number" name="CCCD" placeholder="numbers" />
-        </div>
-        <h1> {{text}} </h1><br>
-        <div><a href="/thoigiannhanhochieu">
-            <button>Submit</button></a>
-        </div>
-     
-    </section>
+    <section class="container">
+        <header>Quý khách nhập CCCD để xem lịch nhập hộ chiếu</header>
+        <form method="POST" action="" class="form">
+          {% csrf_token %}
+            <div class="column">
+              <div class="input-box">
+                <label for="CCCD">Số CCCD</label>
+                <input type="text" name="CCCD" value="{{cccd}}" placeholder="Nhập số căn cước công dân" required />
+              </div>
+            </div>
+  
+          <div>
+          <button name="save" value="save">Submit</button>
+          </div>
+      
+        </form>
+      </section>
 
 </body>
 <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
