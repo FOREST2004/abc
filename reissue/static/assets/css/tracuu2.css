@@ -7,7 +7,7 @@
 }
 
 nav {
-    position: relative;
+    position: fixed;
     width: 250px;
     height: 100%;
     background: #f1f1f1;
@@ -23,7 +23,6 @@ nav.hide {
     width: 0;
 }
 
-
 nav ul {
     width: 100%;
    margin: 18rem 0rem;
@@ -31,7 +30,6 @@ nav ul {
     overflow: hidden;
 
 }
-
 
 nav ul li a {
     width: 100%;

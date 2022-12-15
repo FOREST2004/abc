@@ -23,57 +23,65 @@
 
     <section class="container">
       <header>Tờ khai thông tin</header>
+      {% if text != NULL %}
+      <header style="color:lime">{{text}}</header>
+      {% endif %}
       <form method="POST" action="" class="form">
         {% csrf_token %}
+        {% if warning != NULL %}
+        <h4 style="color:red">{{warning}}<br></h4>
+        <small>- Vui lòng kiểm tra lại CCCD đã nhập<br>- Tra cứu lại thông tin <a href="/laythongtin">tại đây</a></small>
+        <br>
+        {% endif %}
         <div class="input-box">
           <label for="name">Họ tên</label>
           <input type="text" name="name" value="{{name}}" placeholder="Nhập đầy đủ họ tên" required />
         </div>
 
         <div class="input-box">
-            <label for="birthday">Sinh ngày</label>
-            <input type="date" name="birthday" value="{{birth}}" placeholder="Enter birth date" required />
+            <label for="birth">Sinh ngày</label>
+            <input type="date" name="birth" value="{{birth}}" placeholder="Enter birth date" required />
         </div>
 
         <div class="column">
           <div class="input-box">
-            <label for="sdt">Số điện thoại</label>
-            <input type="text" name="sdt" value="{{phonenumber}}" placeholder="Nhập số điện thoại" required />
+            <label for="phonenumber">Số điện thoại</label>
+            <input type="text" name="phonenumber" value="{{phonenumber}}" placeholder="Nhập số điện thoại" required />
           </div>
         </div>
         
         <div class="gender-box">
-          <h3>Gender</h3>
+          <h3>Giới tính</h3>
             {% if gender == "male" %}
             <div class="gender-option">
             <div class="gender">
-              <input type="radio" name="gender" checked />
+              <input type="radio" name="gender" value="male" checked />
               <label for="gender">Nam</label> 
             </div>
             <div class="gender">
-              <input type="radio" name="gender" />
+              <input type="radio" name="gender" value="female"/>
               <label for="gender">Nữ</label>
             </div>
             </div>
             {% elif gender == "female" %}
             <div class="gender-option">
             <div class="gender">
-                <input type="radio" name="gender" />
+                <input type="radio" name="gender" value="male"/>
                 <label for="gender">Nam</label> 
             </div>
             <div class="gender">
-                <input type="radio" name="gender" checked/>
+                <input type="radio" name="gender" value="female"checked/>
                 <label for="gender">Nữ</label>
             </div>
             </div>
             {% else %}
             <div class="gender-option">
             <div class="gender">
-                <input type="radio" name="gender" />
+                <input type="radio" name="gender" value="male"/>
                 <label for="gender">Nam</label> 
             </div>
             <div class="gender">
-                <input type="radio" name="gender" />
+                <input type="radio" name="gender" value="female"/>
                 <label for="gender">Nữ</label>
             </div>
             </div>
@@ -81,18 +89,34 @@
         </div>
         <div class="input-box address">
           <label for="location">Địa chỉ</label>
-          <input type="text" name="location" value="{{location}}" placeholder="Nhập số nhà, tên đường, tổ" required /> 
+          <input type="text" name="location" value="{{location}}" placeholder="Nhập số nhà, tên đường, tổ, phường/xã, quận/huyện, thành phố/tỉnh" required /> 
         </div>
 
         <div class="column">
             <div class="input-box">
-              <label for="CCCD">Số CCCD</label>
-              <input type="text" name="CCCD" value="{{cccd}}" placeholder="Nhập số căn cước công dân" required />
+              <label for="cccd">Số CCCD</label>
+              <input type="text" name="cccd" value="{{cccd}}" placeholder="Nhập số căn cước công dân" required />
             </div>
+          </div><br>
+
+          <!-- {% if img_port == NULL %}
+          <label for="file-upload">Tải ảnh thẻ 4x6:</label><br>
+          <div class="custom-file-upload">
+              <input id="file-upload" type="file" name="img_port" accept="image/*" required>
+          </div><br><br>
+          <label for="file-upload">Tải ảnh tờ khai theo mẫu:</label><br>
+          <div class="custom-file-upload">
+              <input id="file-upload" type="file" name="img_tokhaimau" accept="image/*" required>
+          </div><br><br>
+          <label for="file-upload">Tải ảnh hộ chiếu cũ (nếu có):</label><br>
+          <div class="custom-file-upload">
+              <input id="file-upload" type="file" name="img_hochieu" accept="image/*" required>
           </div>
+          {% else %}
+          {% endif %} -->
 
         <div>
-        <button name="save" value="save">Submit</button>
+        <button name="save" value="save">Lưu thông tin</button>
         </div>
     
       </form>

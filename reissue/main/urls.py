@@ -5,6 +5,7 @@ urlpatterns = [
 #path("<int:id>", views.index, name='index'),
 path('', views.index, name='index'),
 path('/', views.index, name='index'),
+path('home/', views.index, name='home'),
 path('tokhaithongtin/', views.tokhaithongtin, name='tokhaithongtin'),
 path('ktrthongtin/', views.ktrthongtin, name='ktrthongtin'),
 path('tokhaitren14/', views.tokhaitren14, name='tokhaitren14'),

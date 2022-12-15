@@ -8,16 +8,18 @@
 }
 
 body {
-    position: relative;
+    position: fixed;
     width: 100%;
+    background-image: url("/media/images/79784822_p10.jpg");
     min-height: 100vh;
 }
 
 nav {
-    position: relative;
+    position: fixed;
     width: 250px;
     height: 100%;
-    background: #f1f1f1;
+    /* background: #f1f1f1; */
+    background: rgb(204, 204, 204 , 0.4);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -36,9 +38,7 @@ nav ul {
    margin: 18rem 0rem;
     list-style: none;
     overflow: hidden;
-
 }
-
 
 nav ul li a {
     width: 100%;
@@ -65,6 +65,60 @@ nav ul li a:hover {
 }
 
 nav ul li a:hover ion-icon {
+    color: white;
+}
+
+nav .toggle_menu {
+    position: absolute;
+    top: 20px;
+    right: -46px;
+    width: 45px;
+    height: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgb(204, 204, 204, 0.4);
+    border-radius: 0 10px 10px 0;
+    cursor: pointer;
+    transition: linear 0.2s;
+}
+
+nav .toggle_menu ion-icon {
+    color: cornflowerblue;
+    font-size: 1.5em;
+    transition: linear 0.2s;
+}
+nav.toggle_menu:hover {
+    background: cornflowerblue;
+}
+nav.toggle_menu:hover ion-icon {
+    color: white;
+}
+
+nav .home {
+    position: absolute;
+    top: 20px;
+    right: -46px;
+    width: 45px;
+    height: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #f1f1f1;
+    border-radius: 0 10px 10px 0;
+    cursor: pointer;
+    transition: linear 0.2s;
+}
+
+nav .home ion-icon {
+    color: cornflowerblue;
+    font-size: 1.5em;
+    transition: linear 0.2s;
+}
+nav.home:hover {
+    background: cornflowerblue;
+}
+nav.home:hover ion-icon {
     color: white;
 }
 
@@ -138,62 +192,10 @@ button {
 
 .content h2 {
     font-size: 4.5em;
-    color: cornflowerblue;
+    color: whitesmoke;
     text-transform: uppercase;
-    
-
-}
-nav .toggle_menu {
-    position: absolute;
-    top: 20px;
-    right: -46px;
-    width: 45px;
-    height: 45px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: #f1f1f1;
-    border-radius: 0 10px 10px 0;
-    cursor: pointer;
-    transition: linear 0.2s;
-}
-
-nav .toggle_menu ion-icon {
-    color: cornflowerblue;
-    font-size: 1.5em;
-    transition: linear 0.2s;
-}
-nav.toggle_menu:hover {
-    background: cornflowerblue;
-}
-nav.toggle_menu:hover ion-icon {
-    color: white;
-}
-
-
-nav .home {
-    position: absolute;
-    top: 20px;
-    right: -46px;
-    width: 45px;
-    height: 45px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: #f1f1f1;
-    border-radius: 0 10px 10px 0;
-    cursor: pointer;
-    transition: linear 0.2s;
-}
-
-nav .home ion-icon {
-    color: cornflowerblue;
-    font-size: 1.5em;
-    transition: linear 0.2s;
-}
-nav.home:hover {
-    background: cornflowerblue;
-}
-nav.home:hover ion-icon {
-    color: white;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: rgb(101, 100, 100);
+    -webkit-text-stroke-opacity: 0,5;
+    text-align: center;
 }

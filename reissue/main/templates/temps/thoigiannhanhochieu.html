@@ -1,17 +1,25 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE-edge">
-    <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <link rel="stylesheet" href="{% static 'assets/css/tracuu.css' %}">
-    <title>Web hỗ trợ cấp lại hô chiếu cho người Việt Nam</title>
-</head>
-
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Tra cứu thông tin</title>
+    <link href="{% static 'assets/css/tracuu.css' %}" rel="stylesheet">
+    <style>
+        .a.button {
+          color:#fff;
+        }
+        .container {
+          height: 350px;
+        }
+    </style>
+    <figure>
+      <img src="/media/images/79784822_p10.jpg" style="width:100%;height:100%;position: absolute;">
+    </figure>
     <nav>
+        <div class="toggle_menu"><ion-icon name="menu-outline"></ion-icon></div>
         <ul>
             <li><a href="/">
                 <ion-icon name="home"></ion-icon>
@@ -21,7 +29,7 @@
                 <ion-icon name="reader-outline"></ion-icon>
                 Tờ khai thông tin 
             </a></li>
-            <li><a href="/ktrthongtin">
+            <li><a href="/laythongtin">
                 <ion-icon name="settings-outline"></ion-icon>
                 Kiểm tra thông tin
             </a></li>
@@ -35,20 +43,30 @@
             </a></li>
         </ul>
     </nav>
-    <section class="tracuu">
-        <b> Mã nhận hồ chiếu của quý khách là: {{queuenumber}}</b> 
-         
-        <br>
-        <b> {{text}}</b>
-        <br> {{time}}</b>
-        <br>
-        <b> Địa chỉ:  1 Võ Văn Ngân, Phường Linh Chiểu, Thành phố Thủ Đức, Thành phố Hồ Chí Minh.</b>
+</head>
+  
+  <body>
+    <section class="container">
+        <header>Mã nhận hộ chiếu của quý khách: <b>{{queuenumber}}</b></header>
+        <form method="POST" action="" class="form">
+          {% csrf_token %}
+            <div class="column">
+              <div class="input-box">
+                <label for="STT">Số thứ tự: <a>{{stt}}</a></label>
+                <br><br>
+                <label for="CCCD">Ngày nhận hộ chiếu: <a>Ngày {{day}} tháng {{month}} năm 2022</a></label>
+                <br><br>
+                <label for="time">Thời gian nhận hộ chiếu: <a>{{time}} phút</a></label>
+                <br><br>
+                <label for="time">Địa chỉ: Số 1 Võ Văn Ngân, Phường Linh Chiểu, Thành phố Thủ Đức, Thành phố Hồ Chí Minh.</label>
+                <button name="done" value="done">Xong</button>
+              </div>
+            </div>
+          <br>
 
-
-
-        
-       
-    </section>
+        </form>
+    </body>
+</section>
 
 </body>
 <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>

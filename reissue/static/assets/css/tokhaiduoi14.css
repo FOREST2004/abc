@@ -13,7 +13,8 @@ body {
   display: flex;
   justify-content: flex-start;
   padding: 0px;
-  background: #fff;
+  /* background-image: url("/media/images/79784822_p10.jpg"); */
+  background-image: url("/media/images/background.jfif");
   position: relative;
   width: 100%;
 }
@@ -39,6 +40,8 @@ body {
   margin-top: 30px;
 }
 .button_home {
+  margin-top: 5px;
+  margin-left: 5px;
   padding: 8px 16px;
   background-color: cornflowerblue;
   text-decoration: none;
@@ -52,6 +55,20 @@ body {
   transition: linear 0.2s;
   
 }
+.button_xoathongtin {
+  padding: 5px 10px 10px 0px;
+  background-color: cornflowerblue;
+  text-decoration: none;
+  border-radius: 20px;
+  height: 45px;
+}
+.button_xoathongtin button ion-icon {
+  color: cornflowerblue;
+  font-size: 1.2em;
+  transition: linear 0.2s;
+  
+}
+
 .form .input-box {
   width: 100%;
   margin-top: 20px;
@@ -77,6 +94,20 @@ body {
 .form .column {
   display: flex;
   column-gap: 15px;
+}
+.form .custom-file-upload {
+  border: 1px solid #ccc;
+  display: inline-block;
+  padding: 6px 12px;
+  cursor: pointer;
+  width: 60px;
+}
+input[type="file"] {
+  color: gray;
+  font-size: 1rem;
+  font-weight: 400;
+  border: none;
+  transition: all 0.2s ease;
 }
 .form .gender-box {
   margin-top: 20px;
@@ -131,6 +162,7 @@ body {
 .form button:hover {
   background: rgb(88, 56, 250);
 }
+
 /*Responsive*/
 @media screen and (max-width: 500px) {
   .form .column {
