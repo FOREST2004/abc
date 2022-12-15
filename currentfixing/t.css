@@ -19,7 +19,7 @@ nav {
     width: 250px;
     height: 100%;
     /* background: #f1f1f1; */
-    background: rgba(156, 193, 248, 0.41);
+    background:hwb(200 93% 2%);
     display: flex;
     justify-content: center;
     align-items: center;
