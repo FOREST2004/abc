@@ -122,12 +122,19 @@ nav.home:hover ion-icon {
     color: white;
 }
 
+
 .content{
-    font-size: 3.3em;
-    color: black;
-    text-align: right;
-    margin: 0.8rem 0rem 0rem -1rem;
-    text-transform: uppercase;
+    font-size: 20px;
+    position: absolute;
+    top: 20px;
+    left: 250px;
+    width: calc(100% - 250px);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 20px;
+    transition: ease-in-out 0.5s;
 }
 .content2{
     position: absolute;
